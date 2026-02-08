@@ -6,26 +6,26 @@ export const TOKENS = {
   SOL: {
     mint: null, // Native SOL
     decimals: 9,
-    amount: 0.001, // ~$0.20
-    lamports: 1_000_000, // 0.001 SOL in lamports
+    amount: 0.005, // ~$1.00
+    lamports: 5_000_000, // 0.005 SOL in lamports
   },
   USDC: {
     mint: new PublicKey('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'),
     decimals: 6,
-    amount: 0.20,
-    rawAmount: 200_000, // 0.20 USDC in smallest unit (6 decimals)
+    amount: 1.00,
+    rawAmount: 1_000_000, // 1.00 USDC in smallest unit (6 decimals)
   },
   SKR: {
     mint: new PublicKey('SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3'),
     decimals: 6,
-    amount: 3,
-    rawAmount: 3_000_000, // 3 SKR (Seeker) in smallest unit (6 decimals)
+    amount: 15,
+    rawAmount: 15_000_000, // 15 SKR (Seeker) in smallest unit (6 decimals)
   },
   POOP: {
     mint: new PublicKey('5VfRK4fgsDAsV9ajNE8qDMdhUvDueRTtRcACv2zKg5ST'),
     decimals: 0,
-    amount: 10,
-    rawAmount: 10, // 10 POOP (0 decimals)
+    amount: 50,
+    rawAmount: 50, // 50 POOP (0 decimals)
   },
 } as const;
 

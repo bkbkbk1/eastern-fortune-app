@@ -34,6 +34,6 @@ export type PaymentToken = keyof typeof TOKENS;
 export const RPC_ENDPOINT = 'https://api.mainnet-beta.solana.com';
 export const APP_IDENTITY = {
   name: 'Eastern Fortune 2026',
-  uri: 'https://saju-2026.vercel.app',
+  uri: 'https://saju2026.com',
   icon: 'favicon.ico',
 };

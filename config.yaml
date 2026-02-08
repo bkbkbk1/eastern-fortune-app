@@ -1,7 +1,7 @@
 publisher:
   name: Poop Dodge Games
   address: ''
-  website: https://saju-2026.vercel.app
+  website: https://saju2026.com
   email: winmbk99@gmail.com
   media:
     - purpose: icon
@@ -11,10 +11,10 @@ app:
   address: ''
   android_package: com.easternfortune.app
   urls:
-    license_url: https://saju-2026.vercel.app/terms
-    privacy_policy_url: https://saju-2026.vercel.app/privacy
-    copyright_url: https://saju-2026.vercel.app/terms
-    website: https://saju-2026.vercel.app
+    license_url: https://saju2026.com/terms
+    privacy_policy_url: https://saju2026.com/privacy
+    copyright_url: https://saju2026.com/terms
+    website: https://saju2026.com
   media:
     - purpose: icon
       uri: media/app-icon.png
@@ -54,7 +54,7 @@ release:
 
         PAYMENT OPTIONS:
         - Pay with SOL, USDC, SKR, or POOP tokens
-        - Only ~$0.20 per reading via Solana wallet
+        - Only ~$1.00 per reading via Solana wallet
         - Fast, secure blockchain payments
 
         Unlock your destiny with the power of ancient Eastern wisdom and modern AI!

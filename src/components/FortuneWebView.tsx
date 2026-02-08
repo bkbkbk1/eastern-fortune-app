@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from 'react';
 import { SafeAreaView, StyleSheet, StatusBar, Alert } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
 
-const WEBAPP_URL = 'https://saju-2026.vercel.app';
+const WEBAPP_URL = 'https://saju2026.com';
 
 interface BridgeMessage {
   type: string;

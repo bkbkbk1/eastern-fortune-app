@@ -1,14 +1,12 @@
 import React, { useRef, useCallback } from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, StatusBar, Alert } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
-import { executePayment } from '../services/solana-payment';
-import { PaymentToken } from '../config/tokens';
 
 const WEBAPP_URL = 'https://saju-2026.vercel.app';
 
 interface BridgeMessage {
   type: string;
-  token?: PaymentToken;
+  token?: string;
   action?: string;
   timestamp?: number;
 }
@@ -29,13 +27,23 @@ export default function FortuneWebView() {
       const message: BridgeMessage = JSON.parse(event.nativeEvent.data);
 
       if (message.type === 'PAYMENT_REQUEST' && message.token) {
-        const result = await executePayment(message.token);
-        sendToWebView({
-          type: 'PAYMENT_RESPONSE',
-          success: result.success,
-          signature: result.signature,
-          error: result.error,
-        });
+        try {
+          // Lazy import to avoid crash from Node.js polyfill issues at startup
+          const { executePayment } = await import('../services/solana-payment');
+          const result = await executePayment(message.token as any);
+          sendToWebView({
+            type: 'PAYMENT_RESPONSE',
+            success: result.success,
+            signature: result.signature,
+            error: result.error,
+          });
+        } catch (paymentError: any) {
+          sendToWebView({
+            type: 'PAYMENT_RESPONSE',
+            success: false,
+            error: paymentError?.message || 'Payment failed',
+          });
+        }
       }
     } catch (error) {
       console.error('Bridge message error:', error);
@@ -54,6 +62,10 @@ export default function FortuneWebView() {
         startInLoadingState={true}
         style={styles.webview}
         allowsBackForwardNavigationGestures={true}
+        onError={(syntheticEvent) => {
+          const { nativeEvent } = syntheticEvent;
+          console.error('WebView error:', nativeEvent);
+        }}
       />
     </SafeAreaView>
   );

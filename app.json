@@ -16,6 +16,14 @@
       },
       "package": "com.easternfortune.app"
     },
-    "plugins": []
+    "plugins": [
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "51a611f9-bade-48ab-a9ad-134d988a9d8f"
+      }
+    },
+    "owner": "bkbkbk1"
   }
 }

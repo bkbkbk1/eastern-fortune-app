@@ -1,0 +1,80 @@
+publisher:
+  name: Poop Dodge Games
+  address: ''
+  website: https://saju-2026.vercel.app
+  email: winmbk99@gmail.com
+  media:
+    - purpose: icon
+      uri: media/publisher-icon.png
+app:
+  name: Eastern Fortune 2026
+  address: ''
+  android_package: com.easternfortune.app
+  urls:
+    license_url: https://saju-2026.vercel.app/terms
+    privacy_policy_url: https://saju-2026.vercel.app/privacy
+    copyright_url: https://saju-2026.vercel.app/terms
+    website: https://saju-2026.vercel.app
+  media:
+    - purpose: icon
+      uri: media/app-icon.png
+release:
+  address: ''
+  media:
+    - purpose: icon
+      uri: media/app-icon.png
+    - purpose: banner
+      uri: media/banner.png
+    - purpose: screenshot
+      uri: media/screenshot1.png
+    - purpose: screenshot
+      uri: media/screenshot2.png
+    - purpose: screenshot
+      uri: media/screenshot3.png
+  files:
+    - purpose: install
+      uri: media/eastern-fortune-2026.apk
+  catalog:
+    en-US:
+      name: Eastern Fortune 2026
+      short_description: Discover your 2026 destiny through the Four Pillars of Saju
+      long_description: |
+        Eastern Fortune 2026 brings the ancient wisdom of Saju (Four Pillars of Destiny) to your fingertips!
+
+        WHAT IS SAJU?
+        Saju Myeongnihak is a traditional East Asian astrology system that analyzes your birth year, month, day, and hour to reveal the flow of your life and fortune.
+
+        FEATURES:
+        - Detailed 2026 Year of Fire Horse fortune reading
+        - 13 fortune categories: career, wealth, love, health, and more
+        - Daily fortune updates
+        - AI-powered interpretation with personalized advice
+        - Lucky items, colors, numbers, and directions
+        - Available in English and Korean
+
+        PAYMENT OPTIONS:
+        - Pay with SOL, USDC, SKR, or POOP tokens
+        - Only ~$0.20 per reading via Solana wallet
+        - Fast, secure blockchain payments
+
+        Unlock your destiny with the power of ancient Eastern wisdom and modern AI!
+      new_in_version: |
+        - Initial release
+        - Four Pillars fortune reading
+        - Daily fortune feature
+        - Multi-token Solana payments
+  android_details:
+    min_sdk: 24
+    version: 1.0.0
+    version_code: 1
+    locales:
+      - en-US
+solana_mobile_dapp_publisher_portal:
+  google_store_package: com.easternfortune.app
+  testing_instructions: |
+    1. Install the APK on a Solana-compatible Android device
+    2. Open the app - it loads the fortune reading web app
+    3. Enter birth date, time, and gender
+    4. Select a payment token (SOL/USDC/SKR/POOP)
+    5. Approve the transaction in your wallet (Phantom, etc.)
+    6. View your detailed 2026 fortune reading

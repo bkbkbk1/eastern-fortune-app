@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Eastern Fortune 2026",
+    "slug": "eastern-fortune-2026",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./media/app-icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#7c3aed"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./media/app-icon.png",
+        "backgroundColor": "#7c3aed"
+      },
+      "package": "com.easternfortune.app"
+    },
+    "plugins": []
+  }
+}

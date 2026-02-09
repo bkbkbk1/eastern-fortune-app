@@ -35,5 +35,5 @@ export const RPC_ENDPOINT = 'https://api.mainnet-beta.solana.com';
 export const APP_IDENTITY = {
   name: 'Eastern Fortune 2026',
   uri: 'https://saju2026.com',
-  icon: 'https://saju2026.com/icon-192x192.png',
+  icon: 'favicon.ico',
 };

@@ -4,6 +4,7 @@ import {
   SystemProgram,
   Transaction,
 } from '@solana/web3.js';
+import bs58 from 'bs58';
 import {
   createTransferInstruction,
   getAssociatedTokenAddress,
@@ -79,7 +80,11 @@ export async function executePayment(
         identity: APP_IDENTITY,
       });
 
-      const sender = new PublicKey(authResult.accounts[0].address);
+      // MWA returns address as Uint8Array, convert to PublicKey properly
+      const addressBytes = authResult.accounts[0].address;
+      const sender = new PublicKey(
+        typeof addressBytes === 'string' ? addressBytes : new Uint8Array(addressBytes)
+      );
 
       // Build transaction
       let tx: Transaction;
@@ -99,8 +104,13 @@ export async function executePayment(
 
     // Confirm transaction
     if (result) {
+      // MWA may return signature as Uint8Array
+      const signature = typeof result === 'string'
+        ? result
+        : bs58.encode(new Uint8Array(result as any));
+
       const confirmation = await connection.confirmTransaction(
-        result as string,
+        signature,
         'confirmed'
       );
 
@@ -108,7 +118,7 @@ export async function executePayment(
         return { success: false, error: 'Transaction failed on-chain' };
       }
 
-      return { success: true, signature: result as string };
+      return { success: true, signature };
     }
 
     return { success: false, error: 'No transaction signature returned' };

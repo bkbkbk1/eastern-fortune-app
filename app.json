@@ -9,15 +9,24 @@
     "splash": {
       "backgroundColor": "#7c3aed"
     },
+    "scheme": "easternfortune",
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./media/app-icon.png",
         "backgroundColor": "#7c3aed"
       },
-      "package": "com.easternfortune.app"
+      "package": "com.easternfortune.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [{ "scheme": "easternfortune" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
     "plugins": [
-      "expo-asset"
+      "expo-asset",
+      "./plugins/withMWA"
     ],
     "extra": {
       "eas": {

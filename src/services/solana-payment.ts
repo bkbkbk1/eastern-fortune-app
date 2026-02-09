@@ -80,11 +80,16 @@ export async function executePayment(
         identity: APP_IDENTITY,
       });
 
-      // MWA returns address as Uint8Array, convert to PublicKey properly
-      const addressBytes = authResult.accounts[0].address;
-      const sender = new PublicKey(
-        typeof addressBytes === 'string' ? addressBytes : new Uint8Array(addressBytes)
-      );
+      // MWA returns address as base64 string or Uint8Array
+      const rawAddress = authResult.accounts[0].address;
+      let sender: PublicKey;
+      if (typeof rawAddress === 'string') {
+        // base64 string → decode to bytes → PublicKey
+        const bytes = Buffer.from(rawAddress, 'base64');
+        sender = new PublicKey(bytes);
+      } else {
+        sender = new PublicKey(new Uint8Array(rawAddress));
+      }
 
       // Build transaction
       let tx: Transaction;

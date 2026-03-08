@@ -28,8 +28,8 @@ export default function FortuneWebView() {
 
       if (message.type === 'PAYMENT_REQUEST' && message.token) {
         try {
-          // Use Phantom deep link protocol for reliable wallet interaction
-          const { executePayment } = await import('../services/phantom-deeplink');
+          // Use MWA (Mobile Wallet Adapter) for Android wallet interaction
+          const { executePayment } = await import('../services/solana-payment');
           const result = await executePayment(message.token as any);
           sendToWebView({
             type: 'PAYMENT_RESPONSE',
